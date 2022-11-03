@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .menu {
+    @apply flex text-left text-xl translate-x-full ease-in-out duration-500 bg-slate-800 backdrop-blur-md
+    sm:text-lg bg-[#ffffff1a] py-4 md:translate-x-0 md:px-[2vw] md:space-x-[4vw]
+  }
+  .menu li {
+    @apply cursor-pointer text-slate-400 hover:underline underline-offset-[24px] decoration-slate-300
+    active:underline active:decoration-2 active:underline-offset-[22px] active:decoration-slate-100
+  }
+  .header {
+    @apply flex items-center justify-between mb-8
+  }
+  .main-menu-toggle {
+    @apply hidden
+  }
+  .shade-effect {
+    @apply fixed block sm:hidden min-h-screen min-w-full inset-0 bg-black/50 brightness-95 z-10
+  }
+}
+
+@media (max-width: 767px) {
+  .menu {
+    position: fixed;
+    inset: 0 0 0 30%;
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2em;
+    gap: 2em;
+    z-index: 88;
+  }
+  .main-menu-toggle {
+    display: block;
+    position: fixed;
+    width: 2rem;
+    aspect-ratio: 1;
+    right: 2rem;
+    z-index: 99;
+    color: ;
+  }
+}

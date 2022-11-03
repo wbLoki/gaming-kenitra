@@ -1,9 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .App {
+    @apply text-center px-4 py-10 sm:px-14 md:px-16 sm:py-16
+    min-h-screen overflow-hidden lg:max-w-[90%] h-[100rem]
+  }
+  .Feed {
+    @apply justify-between mb-8 text-left space-y-16 text-slate-400
+  }
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Changa', sans-serif;
 }
 
 a {
@@ -20,7 +33,6 @@ a {
     color-scheme: dark;
   }
   body {
-    color: white;
-    background: black;
+    background: #0F172A;
   }
 }
