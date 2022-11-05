@@ -4,8 +4,8 @@
 
 @layer components {
     .action-button {
-        @apply px-8 py-4 mt-8 bg-rose-400 active:bg-[#0a0f1b] font-extrabold text-slate-50
-        tracking-[0.2rem] text-xs
+        @apply px-8 py-4 mt-8 bg-indigo-900 active:bg-[#0a0f1b] font-extrabold text-slate-50
+        tracking-[0.2rem] text-sm
     }
     .web3 {
         @apply w-full md:w-2/3

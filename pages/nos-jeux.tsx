@@ -14,7 +14,7 @@ type Event = {
 }
 //------------------------ List of Games --------------------------------
 const games = [
-  {name: "Fortnite", img: fortnite, details: "This is a battle royale game.", platforms: ["PS5", "Xbox"]},
+  {name: "Fortnite", img: fortnite, details: "This is a battle royale game.", platforms: ["PS5", "Xbox", "PC"]},
   {name: "Valorant", img: valo, details: "This is a shooter game.", platforms: ["PC"]},
   {name: "League of Legends", img: lol, details: "This is a MOBA game.", platforms: ["PC"]},
 ]

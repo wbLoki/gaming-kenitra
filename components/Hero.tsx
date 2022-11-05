@@ -1,6 +1,7 @@
 import React from 'react'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import HeroMobile from '../media/2022-10-25.webp'
 import HeroDesktop from '../media/heroImage.webp'
@@ -14,7 +15,6 @@ type Props = {}
 const Hero = (props: Props) => {
     const [text, count] = useTypewriter({
         words: [
-            // "The sixth dimensional gaming center.",
             "Player 1 has logged-in",
             "initializing sequence #1337...",
             "Start gaming!"
@@ -28,8 +28,9 @@ const Hero = (props: Props) => {
   return (
     <section className="justify-between mb-8 h-full text-slate-900
     text-left space-y-16">
-        <div className="md:flex gap-6" id="landing">
-            <div className="web3" id="main-content">
+        <div className="md:flex gap-6 space-y-4 md:space-y-0" id="landing">
+            {/*********************************  landing image **********************************/}
+            <div className="web3 shadow-lg shadow-black rounded-md" id="main-content">
                 <div className='relative'>
                     <h1 className='absolute z-10 text-2xl lg:text-3xl font-bold bottom-4
                     bg-[#2c2a2aaf] w-full text-amber-500 sm:px-4'
@@ -37,22 +38,20 @@ const Hero = (props: Props) => {
                         <span>{text}</span>
                         <Cursor />
                     </h1>
-                    <Image className="relative hidden sm:block" src={HeroDesktop} alt="web 3" />
-                    <Image className="sm:hidden" src={HeroMobile} alt="web 3" />
+                    <Image className="relative hidden sm:block overflow-hidden rounded-t-md" src={HeroDesktop} alt="web 3" />
+                    <Image className="sm:hidden overflow-hidden rounded-t-md" src={HeroMobile} alt="web 3" />
                 </div>
                 <div className="sm:flex py-6 items-center">
                     <div className="sm:w-1/2">
                         <p className="text-slate-600">
-                            We dive into the next evolution of the web that claims to put
-                            the power of the platforms back into the hands of the people.
-                            But is it really fulfilling its promise?
+                            We bring you the best gaming experience. We are the sixth dimensional gaming center.
                         </p>
-                        <button className="action-button">READ MORE</button>
+                        <button className="action-button"><Link href="/nos-tarifs">Start Game</Link></button>
                     </div>
                 </div>
             </div>
-            {/***********************************  NOS JEUX ***************************************/}
-            <div className="news" id="additional-info">
+            {/******************************  ACTUALITES ************************************/}
+            <div className="news shadow-lg shadow-black rounded-md" id="additional-info">
                 <h1 className="text-4xl font-bold text-amber-500">Actualités</h1>
                 <div id="news-articles" className="news-articles">
                     <div className="article">
