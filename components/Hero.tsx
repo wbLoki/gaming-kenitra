@@ -4,7 +4,10 @@ import Image from 'next/image'
 
 import HeroMobile from '../media/2022-10-25.webp'
 import HeroDesktop from '../media/heroImage.webp'
-import BgImage from '../media/20221021_231607.webp'
+import valo from '../media/valo.jpg'
+import lol from '../media/lol.jpg'
+import cod from '../media/cod.jpg'
+import fortnite from '../media/fortnite.jpg'
 
 type Props = {}
 
@@ -38,10 +41,6 @@ const Hero = (props: Props) => {
                     <Image className="sm:hidden" src={HeroMobile} alt="web 3" />
                 </div>
                 <div className="sm:flex py-6 items-center">
-                        {/* <h1 className='text-2xl lg:text-5xl font-bold sm:w-1/2 text-amber-500'>
-                            <span>{text}</span>
-                            <Cursor />
-                        </h1> */}
                     <div className="sm:w-1/2">
                         <p className="text-slate-600">
                             We dive into the next evolution of the web that claims to put
@@ -52,30 +51,60 @@ const Hero = (props: Props) => {
                     </div>
                 </div>
             </div>
+            {/***********************************  NOS JEUX ***************************************/}
             <div className="news" id="additional-info">
-                <h1 className="text-4xl font-bold text-amber-500">New</h1>
+                <h1 className="text-4xl font-bold text-amber-500">Actualités</h1>
                 <div id="news-articles" className="news-articles">
                     <div className="article">
-                        <h2>Hydrogen VS Electric Cars</h2>
-                        <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
-                    </div>
-                    <div className="article">
-                        <h2>The Downsides of Al Artistry</h2>
-                        <p>
-                            What are the possible adverse effects of on-demand AI image
-                            generation?
+                        <h2>Tournoi Valorant</h2>
+                        <p className='truncate'>
+                            Tournoi Valorant a Kenitra Le 06 Novembre 2022 cash prize 1000DH Reservez vos places dans notre area.
                         </p>
                     </div>
                     <div className="article">
-                        <h2>Is VC Funding Drying Up?</h2>
-                        <p>
-                            Private funding by VC firms is down 50% YOY. We take a look at
-                            what that means.
+                        <h2>Tournoi FIFA22</h2>
+                        <p className='truncate'>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tempus ante in lorem porta ornare.
+                        </p>
+                    </div>
+                    <div className="article">
+                        <h2>League Of Legends</h2>
+                        <p className='truncate'>
+                        Nulla facilisi. Aenean vitae imperdiet arcu. Suspendisse rhoncus,
+                        orci vitae egestas vehicula,
                         </p>
                     </div>
                 </div>
             </div>
         </div>
+
+        {/***************************  Gaming Section ****************************/}
+        <div id="bottom-cards" className="cards">
+            <div className="card">
+                <Image src={valo} alt="Valorant" className="img" />
+                <div className="details">
+                    <h1>Valorant</h1>
+                    <h2>First Person Shooter</h2>
+                    <p></p>
+                </div>
+            </div>
+            <div className="card">
+                <Image src={fortnite} alt="Fornite" className="img" />
+                <div className="details">
+                    <h1>Fortnite</h1>
+                    <h2>Battle Royale</h2>
+                    <p></p>
+                </div>
+            </div>
+            <div className="card">
+                <Image src={lol} alt="League of Legends" className="img" />
+                <div className="details">
+                    <h1>League of Legends</h1>
+                    <h2>MOBA</h2>
+                    <p></p>
+                </div>
+            </div>
+      </div>
     </section>
   )
 }

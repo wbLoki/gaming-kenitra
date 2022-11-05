@@ -8,8 +8,11 @@
     sm:text-lg bg-[#ffffff1a] py-4 md:translate-x-0 md:px-[2vw] md:space-x-[4vw]
   }
   .menu li {
-    @apply cursor-pointer text-slate-400 hover:underline underline-offset-[24px] decoration-slate-300
-    active:underline active:decoration-2 active:underline-offset-[22px] active:decoration-slate-100
+    @apply cursor-pointer text-slate-400 hover:underline underline-offset-[24px]
+    decoration-slate-300
+  }
+  .active {
+    @apply underline decoration-2 underline-offset-[22px] decoration-slate-100
   }
   .header {
     @apply flex items-center justify-between mb-8
@@ -33,11 +36,9 @@
   }
   .main-menu-toggle {
     display: block;
-    position: fixed;
     width: 2rem;
     aspect-ratio: 1;
     right: 2rem;
     z-index: 99;
-    color: ;
   }
 }
