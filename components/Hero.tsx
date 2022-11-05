@@ -43,7 +43,7 @@ const Hero = (props: Props) => {
                 </div>
                 <div className="sm:flex py-6 items-center">
                     <div className="sm:w-1/2">
-                        <p className="text-slate-600">
+                        <p className="text-slate-600 pl-4">
                             We bring you the best gaming experience. We are the sixth dimensional gaming center.
                         </p>
                         <button className="action-button"><Link href="/nos-tarifs">Start Game</Link></button>
