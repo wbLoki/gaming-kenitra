@@ -12,9 +12,9 @@ type Props = {
 function Card({name, details, img, price}: Props) {
   return (
     <div className='shadow-lg shadow-black bg-slate-400 text-slate-900 space-y-4 py-2 rounded-md'>
-        <span className='text-2xl font-bold'>{name}</span>
+        <span className='text-4xl font-bold'>{name}</span>
         <div className='grow bg-indigo-900'>
-        {price ? <span className='text-lg text-slate-300 py-2'>{price} DH</span>
+        {price ? <span className='text-2xl text-slate-300 py-2'>{price} DH</span>
         : 
             <Image src={img} width={500} height={350} alt={name} />}
          </div>

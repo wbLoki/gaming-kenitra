@@ -17,6 +17,7 @@ const games = [
   {name: "Fortnite", img: fortnite, details: "This is a battle royale game.", platforms: ["PS5", "Xbox", "PC"]},
   {name: "Valorant", img: valo, details: "This is a shooter game.", platforms: ["PC"]},
   {name: "League of Legends", img: lol, details: "This is a MOBA game.", platforms: ["PC"]},
+  {name: "Call of Duty: Warzone", img: cod, details: "First person shooter.", platforms: ["PC", "PS5"]},
 ]
 
 function Jeux({}: Props) {
@@ -25,7 +26,7 @@ function Jeux({}: Props) {
   const handleChange = (e:Event) => {
     setSearch(e.target.value);
     console.log(e);
-    setCurrentGames(games.filter(game => game.name.toLowerCase().includes(e.target.value)));
+    setCurrentGames(games.filter(game => game.name.toLowerCase().includes(e.target.value.toLowerCase())));
   }
   return (
     <>
@@ -33,7 +34,7 @@ function Jeux({}: Props) {
       <div className='flex ml-auto rounded-md items-center cursor-pointer h-8 my-2 flex-grow max-w-md bg-indigo-900'>
         <input
         type="text"
-        className="flex-grow p-1 rounded-l-md focus:outline-none px-2"
+        className="flex-grow p-1 rounded-l-md focus:outline-none px-2 bg-slate-800/90"
         value={search}
         onChange={handleChange}
         />
