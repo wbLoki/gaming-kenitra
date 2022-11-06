@@ -12,7 +12,6 @@ module.exports = {
       {
         protocol: "https",
         hostname: "www.giantbomb.com",
-        port: "",
         pathname: "/a/uploads/**",
       },
     ],
