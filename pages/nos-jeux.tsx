@@ -27,7 +27,6 @@ const games = [
 ]
 
 function Jeux({jeux}: Props) {
-  // console.log(jeux);
   const [search, setSearch] = useState("");
   const [currentGames, setCurrentGames] = useState(jeux);
   const handleChange = (e:Event) => {
