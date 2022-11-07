@@ -32,7 +32,6 @@ function Jeux({jeux}: Props) {
   const [currentGames, setCurrentGames] = useState(jeux);
   const handleChange = (e:Event) => {
     setSearch(e.target.value);
-    console.log(jeux[0].platforms);
     setCurrentGames(jeux.filter(game => game.titre.toLowerCase().includes(e.target.value.toLowerCase())));
   }
   return (
@@ -70,6 +69,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       props: {
           jeux,
       },
-      revalidate: 10,
+      revalidate: 100,
   }
 }

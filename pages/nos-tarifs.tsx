@@ -12,7 +12,6 @@ function Tarifs({tarifs}: Props) {
     const abon = tarifs.filter(tarif => tarif.type == "abonnement");
     const pc = tarifs.filter(tarif => tarif.type == "pc");
     const consoles = tarifs.filter(tarif => tarif.type == "console");
-    console.log(consoles);
 
   return (
     <div className='text-center space-y-14 p-4 md:p-20'>
@@ -68,6 +67,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
         props: {
             tarifs,
         },
-        revalidate: 10,
+        revalidate: 100,
     }
 }
