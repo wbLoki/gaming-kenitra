@@ -1,55 +1,73 @@
+import { GetStaticProps } from 'next';
 import React from 'react'
 import Card from '../components/Card'
+import { Tarif } from '../typings';
+import { fetchTarifs } from '../utilities/fetchTarifs';
 
-type Props = {}
+type Props = {
+    tarifs: Tarif[];
+}
 
-function Tarifs({}: Props) {
+function Tarifs({tarifs}: Props) {
+    const abon = tarifs.filter(tarif => tarif.type == "abonnement");
+    const pc = tarifs.filter(tarif => tarif.type == "pc");
+    const consoles = tarifs.filter(tarif => tarif.type == "console");
+    console.log(consoles);
+
   return (
     <div className='text-center space-y-14 p-4 md:p-20'>
-        <div className='shadow-md shadow-black px-4 max-w-2xl mx-auto'>
+        {abon.length != 0 && <div className='shadow-md shadow-black px-4 max-w-2xl mx-auto'>
             <h1 className='text-3xl'>Abonnements</h1>
             <div className='grid grid-cols-1 my-14 md:grid-cols-2 gap-8 pb-4'>
-                <Card name="Starter" price={230}
-                details={["16H", "AMD Ryzen 5", "RTX 3050", 'MSI 24" 165Hz 0,5ms', "Peripherique Razer"]}
-                />
-                <Card name="Express" price={320}
-                details={["24H", "AMD Ryzen 5", "RTX 3050", 'MSI 24" 165Hz 0,5ms', "Peripherique Razer"]}
-                />
+                {abon.map((card, key) => {
+                    return <Card
+                    key={key}
+                    name={card.name}
+                    price={card.prix}
+                    details={card.details}
+                    />
+                })}
             </div>
-        </div>
-        <div className='shadow-md shadow-black px-4'>
+        </div>}
+        {pc.length != 0 && <div className='shadow-md shadow-black px-4'>
             <h2 className='text-3xl'>High-end Gaming PC</h2>
             <div className='grid grid-cols-1 my-14 md:grid-cols-2 xl:grid-cols-4 gap-8 pb-4'>
-                <Card name="Bronze" price={20}
-                details={["1H", "AMD Ryzen 5", "RTX 3050", 'MSI 24" 165Hz 0,5ms', "Peripherique Razer"]}
-                />
-                <Card name="Silver" price={35}
-                details={["2H", "AMD Ryzen 5", "RTX 3050", 'MSI 24" 165Hz 0,5ms', "Peripherique Razer"]}
-                />
-                <Card name="Gold" price={50}
-                details={["3H", "AMD Ryzen 5", "RTX 3050", 'MSI 24" 165Hz 0,5ms', "Peripherique Razer"]}
-                />
-                <Card name="Platinum" price={65}
-                details={["4H", "AMD Ryzen 5", "RTX 3050", 'MSI 24" 165Hz 0,5ms', "Peripherique Razer"]}
-                />
+                {pc.map((card, key) => {
+                    return <Card
+                    key={key}
+                    name={card.name}
+                    price={card.prix}
+                    details={card.details}
+                    />
+                })}
             </div>
-        </div>
-        <div className='shadow-md shadow-black px-4 mx-auto max-w-5xl'>
-            <h2 className='text-3xl'>Console Gaming</h2>
+        </div>}
+        {consoles.length != 0 && <div className='shadow-md shadow-black px-4 mx-auto max-w-5xl'>
+            <h2 className='text-3xl'>PlayStation 5</h2>
             <div className='grid grid-cols-1 my-14 md:grid-cols-2 xl:grid-cols-3 gap-8 pb-4'>
-                <Card name="Bronze" price={20}
-                details={["30min", 'Ecran Samsung 50" 4K', "2 manettes DualSense", "Exclusivite PS5"]}
-                />
-                <Card name="Silver" price={30}
-                details={["1H", 'Ecran Samsung 50" 4K', "2 manettes DualSense", "Exclusivite PS5"]}
-                />
-                <Card name="Gold" price={55}
-                details={["2H", 'Ecran Samsung 50" 4K', "2 manettes DualSense", "Exclusivite PS5"]}
-                />
+                {consoles.map((card, key) => {
+                    return <Card
+                    key={key}
+                    name={card.name}
+                    price={card.prix}
+                    details={card.details}
+                    />
+                })}
             </div>
-        </div>
+        </div>}
     </div>
   )
 }
 
-export default Tarifs
+export default Tarifs;
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+    const tarifs: Tarif[] = await fetchTarifs();
+
+    return {
+        props: {
+            tarifs,
+        },
+        revalidate: 10,
+    }
+}

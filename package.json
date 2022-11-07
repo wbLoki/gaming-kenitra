@@ -9,14 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@portabletext/react": "^2.0.0",
+    "@sanity/image-url": "^1.0.1",
     "framer-motion": "^7.6.2",
     "next": "13.0.0",
+    "next-sanity": "^1.0.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
     "react-simple-typewriter": "^4.0.5"
   },
   "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
     "@types/node": "18.11.8",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",

@@ -15,6 +15,6 @@ module.exports = {
         pathname: "/a/uploads/**",
       },
     ],
-    domains: ["localhost"],
+    domains: ["localhost", "cdn.sanity.io"],
   },
 };
