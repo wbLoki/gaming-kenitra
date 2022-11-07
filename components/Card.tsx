@@ -4,10 +4,9 @@ type Props = {
     name: string;
     price?: number;
     details: string[];
-    img?: string;
 }
 
-function Card({name, price, details, img}: Props) {
+function Card({name, price, details}: Props) {
   return (
     <div className='shadow-lg shadow-black bg-slate-400 text-slate-900 space-y-4 py-2 rounded-md'>
         <span className='text-4xl font-bold'>{name}</span>
