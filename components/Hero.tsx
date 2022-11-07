@@ -30,7 +30,7 @@ const Hero = (props: Props) => {
     text-left space-y-16">
         <div className="md:flex gap-6 space-y-4 md:space-y-0" id="landing">
             {/*********************************  landing image **********************************/}
-            <div className="web3 shadow-lg shadow-black rounded-md" id="main-content">
+            <div className="web3 shadow-xl rounded-md" id="main-content">
                 <div className='relative'>
                     <h1 className='absolute z-10 text-2xl lg:text-3xl font-bold bottom-4
                     bg-[#2c2a2aaf] w-full text-amber-500 sm:px-4'
@@ -51,7 +51,7 @@ const Hero = (props: Props) => {
                 </div>
             </div>
             {/******************************  ACTUALITES ************************************/}
-            <div className="news shadow-lg shadow-black rounded-md" id="additional-info">
+            <div className="news shadow-xl rounded-md" id="additional-info">
                 <h1 className="text-4xl font-bold text-amber-500">Actualités</h1>
                 <div id="news-articles" className="news-articles">
                     <div className="article">
