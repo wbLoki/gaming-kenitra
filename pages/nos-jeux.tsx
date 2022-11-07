@@ -10,6 +10,7 @@ import { Game } from '../typings';
 import { fetchGames } from '../utilities/fetchGames'
 import { GetStaticProps } from 'next';
 import { urlFor } from '../sanity';
+import client from '../client';
 
 type Props = {
   jeux: Game[];
@@ -28,10 +29,10 @@ const games = [
 
 function Jeux({jeux}: Props) {
   const [search, setSearch] = useState("");
-  const [currentGames, setCurrentGames] = useState(jeux);
+  const [currentGames, setCurrentGames] = useState(jeux || null);
   const handleChange = (e:Event) => {
     setSearch(e.target.value);
-    setCurrentGames(jeux.filter(game => game.titre.toLowerCase().includes(e.target.value.toLowerCase())));
+    setCurrentGames(jeux?.filter(game => game.titre.toLowerCase().includes(e.target.value.toLowerCase())));
   }
   return (
     <>
@@ -46,13 +47,13 @@ function Jeux({jeux}: Props) {
         <BsSearch className="w-10" />
       </div>
       <div id="bottom-cards" className="grid grid-cols-1 my-14 md:grid-cols-2 xl:grid-cols-3 gap-4">
-        {currentGames.length!=0 && currentGames.map((game, i) => {
+        {currentGames?.length!=0 && currentGames.map((game, i) => {
           return <Card
           key={i}
-          name={game.titre}
+          name={game?.titre}
           img={urlFor(game?.image).url()}
-          details={game.detail}
-          platforms={game.platforms} />
+          details={game?.detail}
+          platforms={game?.platforms} />
         })}
       </div>
     </>
@@ -62,7 +63,7 @@ function Jeux({jeux}: Props) {
 export default Jeux
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const jeux: Game[] = await fetchGames();
+  const jeux: Game[] = await client.fetch(`*[_type == "jeux"]`);
 
   return {
       props: {

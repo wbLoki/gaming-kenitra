@@ -2,6 +2,7 @@ interface SanityBody {
     _createdAt: string;
     _id: string;
     _rev: string;
+    _type: string;
     _updatedAt: string;
 }
 
@@ -16,7 +17,7 @@ interface Image {
 export interface Game extends SanityBody {
     detail: string;
     image: string;
-    platforms: [string];
+    platforms: string[];
     titre: string;
 }
 
@@ -27,7 +28,7 @@ export interface Platform extends SanityBody {
 }
 
 export interface Tarif extends SanityBody {
-    details: [string];
+    details: string[];
     name: string;
     prix: number;
     type: string;
