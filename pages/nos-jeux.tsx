@@ -7,7 +7,6 @@ import lol from '../media/lol.jpg'
 import cod from '../media/cod.jpg'
 import fortnite from '../media/fortnite.jpg'
 import { Game } from '../typings';
-import { fetchGames } from '../utilities/fetchGames'
 import { GetStaticProps } from 'next';
 import { urlFor } from '../sanity';
 import client from '../client';
