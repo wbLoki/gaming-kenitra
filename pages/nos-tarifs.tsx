@@ -3,14 +3,12 @@ import React from 'react'
 import Card from '../components/Card'
 import { Tarif } from '../typings';
 import client from '../client';
-// import { fetchTarifs } from '../utilities/fetchTarifs';
 
 type Props = {
     tarifs: Tarif[];
 }
 
 function Tarifs({tarifs}: Props) {
-    // console.log(tarifs);
     const abon = tarifs?.filter(tarif => tarif.type == "abonnement");
     const pc = tarifs?.filter(tarif => tarif.type == "pc");
     const consoles = tarifs?.filter(tarif => tarif.type == "console");
