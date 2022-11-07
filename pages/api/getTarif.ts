@@ -16,6 +16,6 @@ type Data = {
     res: NextApiResponse<Data>
   ) {
     // const tarifs: Tarif[] = await sanityClient.fetch(query);
-    res.status(200).json({ tarifs })
+    // res.status(200).json({ tarifs })
   }
   
