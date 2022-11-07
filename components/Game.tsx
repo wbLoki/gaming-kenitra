@@ -12,7 +12,6 @@ type Props = {
 }
 
 function Game({name, img, details, platforms}: Props) {
-  console.log(name);
   return (
     <div className='p-4 bg-[#3347563f] rounded-md shadow-md shadow-black'>
       <div className="flex text-left space-x-4 cursor-default">
