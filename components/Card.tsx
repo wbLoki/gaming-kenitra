@@ -1,12 +1,10 @@
 import React from 'react'
-import Image, { StaticImageData } from 'next/image'
-
 
 type Props = {
     name: string;
     price?: number;
     details: string[];
-    img?: StaticImageData;
+    img?: string;
 }
 
 function Card({name, price, details, img}: Props) {
@@ -14,9 +12,7 @@ function Card({name, price, details, img}: Props) {
     <div className='shadow-lg shadow-black bg-slate-400 text-slate-900 space-y-4 py-2 rounded-md'>
         <span className='text-4xl font-bold'>{name}</span>
         <div className='grow py-4 bg-indigo-900'>
-        {price ? <span className='text-3xl text-slate-300'>{price} DH</span>
-        : 
-            <Image src={img} width={500} height={350} alt={name} />}
+         <span className='text-3xl text-slate-300'>{price} DH</span>
          </div>
         <div className='p-2'>
             <ul className='divide-y divide-slate-700 -mb-4'>
