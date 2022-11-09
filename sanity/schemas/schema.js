@@ -5,11 +5,10 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // We import object and document schemas
-import category from "./category";
-import post from "./post";
+import page from "./page";
 import tarif from "./tarif";
 import jeux from "./jeux";
-import platform from "./platform";
+import menu from "./menu";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -20,11 +19,10 @@ export default createSchema({
   types: schemaTypes.concat([
     // The following are document types which will appear
     // in the studio.
+    menu,
+    page,
     jeux,
-    platform,
     tarif,
-    category,
-    post,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

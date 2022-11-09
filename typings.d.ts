@@ -14,6 +14,7 @@ interface Image {
     }
 }
 
+
 export interface Game extends SanityBody {
     detail: string;
     image: string;
@@ -21,15 +22,21 @@ export interface Game extends SanityBody {
     titre: string;
 }
 
-export interface Platform extends SanityBody {
-    _type: "platform";
-    titre: string;
-    icon: Image;
-}
-
 export interface Tarif extends SanityBody {
     details: string[];
     name: string;
     prix: number;
     type: string;
+}
+
+export interface Menu {
+    slug: string;
+    key: number;
+    title: string;
+}
+
+export interface Page extends SanityBody {
+    slug: {_type: "slug", current: string};
+    page: Page;
+    title: string;
 }

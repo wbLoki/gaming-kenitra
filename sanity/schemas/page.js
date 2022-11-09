@@ -1,26 +1,21 @@
 export default {
-  name: "pageInfo",
-  title: "PageInfo",
+  name: "page",
+  title: "Page",
   type: "document",
   fields: [
     {
       name: "title",
-      title: "Title",
+      title: "Titre",
       type: "string",
     },
     {
       name: "slug",
-      title: "Slug",
+      title: "Lien",
       type: "slug",
       options: {
         source: "title",
         maxLength: 96,
       },
-    },
-    {
-      name: "author",
-      title: "Author",
-      type: "string",
     },
     {
       name: "mainImage",
@@ -29,17 +24,6 @@ export default {
       options: {
         hotspot: true,
       },
-    },
-    {
-      name: "categories",
-      title: "Categories",
-      type: "array",
-      of: [{ type: "reference", to: { type: "category" } }],
-    },
-    {
-      name: "publishedAt",
-      title: "Published at",
-      type: "datetime",
     },
     {
       name: "body",

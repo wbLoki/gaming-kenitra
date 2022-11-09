@@ -2,10 +2,6 @@ import React, {useState} from 'react'
 import Card from '../components/Game'
 import { BsSearch } from "react-icons/bs";
 
-import valo from '../media/valo.jpg'
-import lol from '../media/lol.jpg'
-import cod from '../media/cod.jpg'
-import fortnite from '../media/fortnite.jpg'
 import { Game } from '../typings';
 import { GetStaticProps } from 'next';
 import { urlFor } from '../sanity';
@@ -18,13 +14,6 @@ type eventTarget = {value: string}
 type Event = {
   target: eventTarget
 }
-//------------------------ List of Games --------------------------------
-const games = [
-  {name: "Fortnite", img: fortnite, details: "This is a battle royale game.", platforms: ["PS5", "Xbox", "PC"]},
-  {name: "Valorant", img: valo, details: "This is a shooter game.", platforms: ["PC"]},
-  {name: "League of Legends", img: lol, details: "This is a MOBA game.", platforms: ["PC"]},
-  {name: "Call of Duty: Warzone", img: cod, details: "First person shooter.", platforms: ["PC", "PS5"]},
-]
 
 function Jeux({jeux}: Props) {
   const [search, setSearch] = useState("");
@@ -48,7 +37,7 @@ function Jeux({jeux}: Props) {
       <div id="bottom-cards" className="grid grid-cols-1 my-14 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {currentGames?.length!=0 && currentGames.map((game, i) => {
           return <Card
-          key={i}
+          key={game?._id}
           name={game?.titre}
           img={urlFor(game?.image).url()}
           details={game?.detail}

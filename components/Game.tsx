@@ -24,9 +24,9 @@ function Game({name, img, details, platforms}: Props) {
             <div className='flex gap-2 pt-auto items-center'>
               {platforms.map((platform, i) => {
                 switch (platform) {
-                  case "PS5": return <PS5 className='h-6 w-6'/>
-                  case "Xbox": return <Xbox />
-                  case "PC": return <PC />
+                  case "PS5": return <PS5 key={i} className='h-6 w-6'/>
+                  case "Xbox": return <Xbox key={i} />
+                  case "PC": return <PC key={i} />
                 }
               })}
             </div>
