@@ -25,7 +25,7 @@ function Jeux({jeux}: Props) {
   return (
     <>
       <h1 className='text-left text-4xl'>Nos Jeux</h1>
-      <div className='flex ml-auto rounded-md items-center cursor-pointer h-10 my-2 flex-grow max-w-md bg-indigo-900'>
+      <div className='flex mx-auto sm:ml-auto rounded-md items-center cursor-pointer h-10 my-8 flex-grow max-w-xs sm:max-w-md bg-indigo-900'>
         <input
         type="text"
         className="flex-grow h-full p-1 rounded-l-md focus:outline-none px-2 bg-slate-800/90"

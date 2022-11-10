@@ -4,7 +4,7 @@
 
 @layer components {
   .App {
-    @apply text-center px-4 py-10 sm:px-14 md:px-16 sm:py-16
+    @apply text-center sm:px-4 sm:py-10 md:px-14 xl:px-16 md:py-16
     overflow-hidden lg:max-w-[90%]
   }
   .Feed {

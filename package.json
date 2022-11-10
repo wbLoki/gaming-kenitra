@@ -10,17 +10,21 @@
   },
   "dependencies": {
     "@portabletext/react": "^2.0.0",
+    "@react-google-maps/api": "^2.16.1",
     "@sanity/image-url": "^1.0.1",
     "framer-motion": "^7.6.2",
+    "google-map-react": "^2.2.0",
     "next": "13.0.0",
     "next-sanity": "^1.0.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.6.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-simple-typewriter": "^4.0.5"
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.2",
+    "@types/google-map-react": "^2.1.7",
     "@types/node": "18.11.8",
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",

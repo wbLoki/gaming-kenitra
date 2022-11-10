@@ -63,9 +63,6 @@ function Header({}: Props) {
           <li className={router.pathname == "/nos-tarifs" ? "active" : ""}>
             <Link href="/nos-tarifs">Nos Tarifs</Link>
           </li>
-          <li className={router.pathname == "/horaire" ? "active" : ""}>
-            <Link href="/horaire">Horaire</Link>
-          </li>
           <li className={router.pathname == "/notre-area" ? "active" : ""}>
             <Link href="/notre-area">Notre Area</Link>
           </li>

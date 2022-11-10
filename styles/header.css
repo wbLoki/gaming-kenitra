@@ -15,7 +15,7 @@
     @apply underline decoration-2 underline-offset-[22px] decoration-slate-100
   }
   .header {
-    @apply flex items-center justify-between mb-12
+    @apply flex items-center justify-between mb-12 mt-4 ml-4
   }
   .main-menu-toggle {
     @apply hidden
