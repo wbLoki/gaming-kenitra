@@ -15,7 +15,7 @@ function Card({name, price, details}: Props) {
          </div>
         <div className='p-2'>
             <ul className='divide-y divide-slate-700 -mb-4'>
-            {details.map((detail, i) => {
+            {details?.map((detail, i) => {
                 return <li key={i} className='py-2 px-4'>{detail}</li>
               })}
             </ul>

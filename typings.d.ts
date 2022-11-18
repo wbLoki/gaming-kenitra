@@ -20,6 +20,7 @@ export interface Game extends SanityBody {
     image: string;
     platforms: string[];
     titre: string;
+    featured: boolean;
 }
 
 export interface Tarif extends SanityBody {

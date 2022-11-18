@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import {SiPlaystation5 as PS5, SiXbox as Xbox} from 'react-icons/si'
+import {MdComputer as PC} from 'react-icons/md'
 import HeroMobile from '../media/2022-10-25.webp'
 import HeroDesktop from '../media/heroImage.webp'
-import valo from '../media/valo.jpg'
-import lol from '../media/lol.jpg'
-import cod from '../media/cod.jpg'
-import fortnite from '../media/fortnite.jpg'
+import { Game } from '../typings'
+import client from '../client'
+import { urlFor } from '../sanity'
 
 type Props = {}
 
+
 const Hero = (props: Props) => {
+    const [games, setGames] = useState<Game[]>([]);
     const [text, count] = useTypewriter({
         words: [
             "Player 1 has logged-in",
@@ -25,6 +27,16 @@ const Hero = (props: Props) => {
         deleteSpeed: 50,
     });
 
+    const fetchGames = async () => {
+        const result = await client.fetch(`*[_type == "jeux" && featured == true]`);
+        setGames(result);
+    };
+
+    useEffect(() => {
+        fetchGames();
+    },[]);
+
+    // console.log(games);
   return (
     <div className="justify-between mb-8 h-full text-slate-900
     text-left space-y-16">
@@ -80,8 +92,28 @@ const Hero = (props: Props) => {
         {/***************************  Gaming Section ****************************/}
         <section className='my-14 md:space-x-4 shadow-xl rounded-md bg-[#0a0f1b] p-4 md:p-6'>
             <h1 className='text-4xl font-bold text-amber-500'>Featured Games</h1>
-            <div id="bottom-cards" className="md:flex md:space-x-4">
-                <div className="card">
+            <div id="bottom-cards" className="md:flex md:space-x-4 max-w-[85vw] mx-auto">
+                {games?.length!=0 && games?.map((game, i) => {
+                    return <div className="card" key={game?._id}>
+                        <Image src={urlFor(game?.image).url()} alt={game.titre} width={675} height={900} className="img" />
+                        <div className="details flex flex-col justify-between">
+                            <div className='space-y-4'>
+                                <h1>{game.titre}</h1>
+                                <p className='line-clamp-2 md:hidden xl:line-clamp-4'>{game.detail}</p>
+                            </div>
+                            <div className='flex gap-2 items-center text-slate-100'>
+                                {game.platforms.map((platform, i) => {
+                                    switch (platform) {
+                                    case "PS5": return <PS5 key={i} className='h-6 w-6'/>
+                                    case "Xbox": return <Xbox key={i} />
+                                    case "PC": return <PC key={i} />
+                                    }
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                })}
+                {/* <div className="card">
                     <Image src={valo} alt="Valorant" className="img" />
                     <div className="details">
                         <h1>Valorant</h1>
@@ -104,7 +136,7 @@ const Hero = (props: Props) => {
                         <h2>MOBA</h2>
                         <p></p>
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     </div>
@@ -112,3 +144,4 @@ const Hero = (props: Props) => {
 }
 
 export default Hero
+
