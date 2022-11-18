@@ -13,7 +13,7 @@ type Props = {
 
 function Game({name, img, details, platforms}: Props) {
   return (
-    <div className='p-4 bg-[#3347563f] rounded-md shadow-md shadow-black'>
+    <div className='p-4 bg-[#0F172A] rounded-md shadow-md shadow-black'>
       <div className="flex text-left space-x-4 cursor-default">
           <Image src={img} alt={name} width={675} height={900} className="w-1/3 object-scale-down" />
           <div className="flex flex-col w-2/3 space-y-2 justify-between">

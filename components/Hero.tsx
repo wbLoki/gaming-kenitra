@@ -26,7 +26,7 @@ const Hero = (props: Props) => {
     });
 
   return (
-    <section className="justify-between mb-8 h-full text-slate-900
+    <div className="justify-between mb-8 h-full text-slate-900
     text-left space-y-16">
         <div className="md:flex gap-6 space-y-4 md:space-y-0" id="landing">
             {/*********************************  landing image **********************************/}
@@ -78,33 +78,36 @@ const Hero = (props: Props) => {
         </div>
 
         {/***************************  Gaming Section ****************************/}
-        <div id="bottom-cards" className="cards">
-            <div className="card">
-                <Image src={valo} alt="Valorant" className="img" />
-                <div className="details">
-                    <h1>Valorant</h1>
-                    <h2>First Person Shooter</h2>
-                    <p></p>
+        <section className='my-14 md:space-x-4 shadow-xl rounded-md bg-[#0a0f1b] p-4 md:p-6'>
+            <h1 className='text-4xl font-bold text-amber-500'>Featured Games</h1>
+            <div id="bottom-cards" className="md:flex md:space-x-4">
+                <div className="card">
+                    <Image src={valo} alt="Valorant" className="img" />
+                    <div className="details">
+                        <h1>Valorant</h1>
+                        <h2>First Person Shooter</h2>
+                        <p></p>
+                    </div>
+                </div>
+                <div className="card">
+                    <Image src={fortnite} alt="Fornite" className="img" />
+                    <div className="details">
+                        <h1>Fortnite</h1>
+                        <h2>Battle Royale</h2>
+                        <p></p>
+                    </div>
+                </div>
+                <div className="card">
+                    <Image src={lol} alt="League of Legends" className="img" />
+                    <div className="details">
+                        <h1>League of Legends</h1>
+                        <h2>MOBA</h2>
+                        <p></p>
+                    </div>
                 </div>
             </div>
-            <div className="card">
-                <Image src={fortnite} alt="Fornite" className="img" />
-                <div className="details">
-                    <h1>Fortnite</h1>
-                    <h2>Battle Royale</h2>
-                    <p></p>
-                </div>
-            </div>
-            <div className="card">
-                <Image src={lol} alt="League of Legends" className="img" />
-                <div className="details">
-                    <h1>League of Legends</h1>
-                    <h2>MOBA</h2>
-                    <p></p>
-                </div>
-            </div>
-      </div>
-    </section>
+        </section>
+    </div>
   )
 }
 
