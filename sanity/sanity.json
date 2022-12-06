@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "gaming-area"
+    "name": "The Moroccan Experience"
   },
   "api": {
-    "projectId": "heafrczk",
+    "projectId": "2yuzbns1",
     "dataset": "production"
   },
   "plugins": [
@@ -12,7 +12,7 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "dashboard-widget-netlify"
+    "barcode-input"
   ],
   "env": {
     "development": {

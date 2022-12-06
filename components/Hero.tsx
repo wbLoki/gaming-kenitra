@@ -8,7 +8,7 @@ import HeroMobile from '../media/2022-10-25.webp'
 import HeroDesktop from '../media/heroImage.webp'
 import { Game } from '../typings'
 import client from '../client'
-import { urlFor } from '../sanity'
+// import { urlFor } from '../sanity'
 
 type Props = {}
 
@@ -95,7 +95,7 @@ const Hero = (props: Props) => {
             <div id="bottom-cards" className="md:flex md:space-x-4 max-w-[85vw] mx-auto">
                 {games?.length!=0 && games?.map((game, i) => {
                     return <div className="card" key={game?._id}>
-                        <Image src={urlFor(game?.image).url()} alt={game.titre} width={675} height={900} className="img" />
+                        {/* <Image src={urlFor(game?.image).url()} alt={game.titre} width={675} height={900} className="img" /> */}
                         <div className="details flex flex-col justify-between">
                             <div className='space-y-4'>
                                 <h1>{game.titre}</h1>

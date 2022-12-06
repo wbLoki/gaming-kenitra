@@ -1,5 +1,5 @@
 {
-  "name": "gaming-area",
+  "name": "the-moroccan-experience",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -24,8 +24,8 @@
     "eslint": "^8.6.0",
     "prop-types": "^15.7",
     "react": "^17.0",
+    "react-barcode": "^1.3.2",
     "react-dom": "^17.0",
-    "sanity-plugin-dashboard-widget-netlify": "^1.3.1",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {},
